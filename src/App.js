@@ -1,24 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home'; 
+import Login from './pages/Login';
+import Register from './pages/Register';
+import IssuerDashboard from './pages/IssuerDashboard';
+import UserDashboard from './pages/UserDashboard';
+import VerifierDashboard from './pages/VerifierDashboard';
+import ProtectedRoute from './components/ProtectedRoute';
+import Navbar from './layouts/Navbar'; // Import Navbar
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <Navbar /> {/* Navbar will appear on all pages */}
+        <Routes>
+          <Route path="/" element={<Home />} /> {/* Home route */}
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route
+            path="/issuer-dashboard"
+            element={
+              <ProtectedRoute>
+                <IssuerDashboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/licenseUser-dashboard"
+            element={
+              <ProtectedRoute>
+                <UserDashboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/verifier-dashboard"
+            element={
+              <ProtectedRoute>
+                <VerifierDashboard />
+              </ProtectedRoute>
+            }
+          />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

@@ -11,3 +11,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Add hover effect to buttons */
+.btn-primary:hover {
+  background-color: #007bff;
+  opacity: 0.8;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Add shadow to inputs on focus */
+.form-control:focus {
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Navbar hover effect */
+.nav-link:hover {
+  color: #0056b3 !important;
+  text-decoration: underline;
+}

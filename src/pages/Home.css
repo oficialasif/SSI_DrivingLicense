@@ -1,0 +1,57 @@
+/* src/pages/Home.css */
+.home-container {
+  background-color: #f1f1f1; /* Ash background color */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-section {
+  background: linear-gradient(to right, #667eea, #764ba2);
+  color: white;
+  padding: 120px 0;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.hero-content p {
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+
+.info-section {
+  background-color: #f8f9fa;
+}
+
+.features-section {
+  background-color: #f1f1f1;
+}
+
+.info-section h2, .features-section h2 {
+  color: #764ba2;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.info-section p, .features-section p {
+  font-size: 16px;
+  color: #6c757d;
+}
+
+.info-section ul li, .features-section ul li {
+  font-size: 18px;
+  color: #28a745;
+  margin-bottom: 10px;
+}
+
+.card {
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}

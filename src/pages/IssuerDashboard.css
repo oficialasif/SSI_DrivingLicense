@@ -1,0 +1,269 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+}
+
+.dashboard-container {
+  display: flex;
+  min-height: calc(100vh - 60px); /* Full viewport minus navbar */
+  margin-top: 60px;
+}
+
+.sidebar {
+  position: fixed; /* Fixed sidebar */
+  top: 60px; /* Adjust for navbar height */
+  left: 0;
+  width: 250px;
+  height: calc(100vh - 60px); /* Sidebar height minus navbar */
+  background-color: #29366f;
+  color: white;
+  padding: 20px;
+  overflow-y: auto;
+  transition: all 0.3s ease;
+}
+
+.sidebar h3 {
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 15px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar ul li:hover {
+  background-color: #1491ea;
+}
+
+.main-content {
+  margin-left: 250px; /* Offset for sidebar */
+  padding: 30px;
+  flex-grow: 1;
+}
+
+.license-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 800px;
+  margin: auto;
+  padding: 25px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.form-field {
+  flex: 1 1 calc(50% - 20px); /* Two fields per row */
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.form-field label {
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+}
+
+.form-field input,
+.form-field select {
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+.form-field input:focus,
+.form-field select:focus {
+  border-color: #1491ea;
+}
+
+.gender-field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.gender-field label {
+  margin-right: 15px;
+  font-weight: bold;
+}
+
+.form-row {
+  flex: 1 1 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.issue-button {
+  padding: 15px 30px;
+  background-color: #1491ea;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.issue-button:hover {
+  background-color: #64c8fa;
+}
+
+h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 1024px) {
+  .main-content {
+    margin-left: 220px; /* Adjust main content margin on medium screens */
+  }
+
+  .sidebar {
+    width: 220px;
+  }
+
+  .license-form {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: 0;
+    margin-bottom: 20px;
+  }
+
+  .sidebar ul {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .sidebar ul li {
+    width: 32%; /* Make sidebar options fit horizontally on mobile */
+    text-align: center;
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 15px;
+  }
+
+  .form-field {
+    flex: 1 1 100%; /* One field per row on mobile */
+  }
+
+  .license-form {
+    padding: 20px;
+  }
+
+  label {
+    font-size: 13px;
+  }
+
+  input[type="text"],
+  input[type="date"] {
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar ul li {
+    width: 100%; /* Full width items on very small screens */
+  }
+}
+
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+input[type="text"],
+input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #555;
+}
+
+input[type="text"]::placeholder,
+input[type="date"]::placeholder {
+  color: #999;
+}
+
+input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+input[type="text"],
+input[type="date"] {
+  margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+  form {
+    padding: 15px;
+  }
+
+  label {
+    font-size: 13px;
+  }
+
+  input[type="text"],
+  input[type="date"] {
+    padding: 8px;
+  }
+}
